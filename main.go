@@ -45,11 +45,26 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	for _, event := range events {
+		for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+message.Text+" OK!")).Do(); err != nil {
+				var pet *Pet
+				log.Println(message.Text)
+				inText := strings.ToLower(message.Text)
+				if strings.Contains(inText, "神") || strings.Contains(inText, "dog") {
+					pet = PetDB.GetNextDog()
+				} else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
+					pet = PetDB.GetNextCat()
+				}
+
+				if pet == nil {
+					pet = PetDB.GetNextPet()
+				}
+
+				out := fmt.Sprintf("您好，目前的動物名為%s, 所在地為:%s, 電話為:%s ", pet.Name, pet.Resettlement, pet.Phone)
+				log.Println("Current msg:", out)
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 				}
 			}
