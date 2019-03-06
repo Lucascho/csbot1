@@ -49,17 +49,17 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
-				//if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+message.Text+" OK!")).Do(); err != nil {
-				//	log.Print(err)
-				//}
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+message.Text+" OK!")).Do(); err != nil {
+					log.Print(err)
+				}
 				//out := "喵"
 				//inText := strings.ToLower(message.Text)
 				//if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 				//	out := "汪"
 				//}
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("測試成功")).Do(); err != nil {
-					log.Print(err)
-				}
+				//if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("測試成功")).Do(); err != nil {
+				//	log.Print(err)
+				//}
 			}
 		}
 	}
