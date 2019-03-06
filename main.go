@@ -52,7 +52,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+message.Text+" OK!")).Do(); err != nil {
 				//	log.Print(err)
 				//}
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(" 測試成功")).Do(); err != nil {
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text + " 測試成功")).Do(); err != nil {
 					log.Print(err)
 				}
 				//out := "喵"
