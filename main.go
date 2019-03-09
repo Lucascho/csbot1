@@ -59,7 +59,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					out = "汪"
 				}
-				if strings.Contains(inText, "今天運勢")  {
+				if strings.Contains(inText, "今天運勢") || strings.Contains(inText, "今日運勢") {
 					lucky := []string{
 					"大吉","吉","小吉","凶",
 					}
