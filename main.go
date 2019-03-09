@@ -59,36 +59,39 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					out = "汪"
 				}
-				if strings.Contains(inText, "今天運勢") || strings.Contains(inText, "今日運勢") {
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "今天運勢") || strings.Contains(inText, "今日運勢") {
 					lucky := []string{
 					"大吉","吉","小吉","凶",
 					}
 					out = lucky[rand.Intn(len(lucky))]
 				}
-				if strings.Contains(inText, "胖") || strings.Contains(inText, "月半") {
+				if strings.Contains(inText, "/cs") && ( strings.Contains(inText, "胖") || strings.Contains(inText, "月半")) {
 					out = "小宇宙才不胖！！！"
 				}
-				if strings.Contains(inText, "圓")  {
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "圓")  {
 					out = "小宇宙才不圓！！！"
 				}
-				if strings.Contains(inText, "神") && strings.Contains(inText, "買嗎"){
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "買嗎"){
 					buy := []string{
 					"考慮一下","買！！！","等等","不要",
 					}
 					out = buy[rand.Intn(len(buy))]
 				}
 				
-				if strings.Contains(inText, "/cs") && strings.Contains(inText, "吃什麼"){
+				if strings.Contains(inText, "/cs") && (strings.Contains(inText, "吃什麼")||strings.Contains(inText, "吃")){
 					eat := []string{
 					"飯飯","麵麵","打邊爐","炸豬排","燒烤",
 					}
 					out = eat[rand.Intn(len(eat))]
 				}
-				if strings.Contains(inText, "小宇宙")  {
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "小宇宙")  {
 					out = "小宇宙萌萌達~~"
 				}
-				if strings.Contains(inText, "燒")  {
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "燒")  {
 					out = "燒～～～"
+				}
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "天然")  {
+					out = "你才天然，你全家都天然"
 				}
 				
 				log.Println(message.Text)
