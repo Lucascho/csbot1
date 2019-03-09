@@ -78,7 +78,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					out = buy[rand.Intn(len(buy))]
 				}
 				
-				if strings.Contains(inText, "神") && strings.Contains(inText, "吃什麼"){
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "吃什麼"){
 					eat := []string{
 					"飯飯","麵麵","打邊爐","炸豬排","燒烤",
 					}
