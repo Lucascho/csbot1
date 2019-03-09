@@ -61,8 +61,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}
 				if strings.Contains(inText, "今天運勢")  {
 					lucky := []string{
-					"大吉","吉","小吉","兇"
-						
+					"大吉","吉","小吉","兇",
 					}
 					out = lucky[rand.Intn(len(lucky))]
 				}
