@@ -68,6 +68,28 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if strings.Contains(inText, "胖") || strings.Contains(inText, "月半") {
 					out = "小宇宙才不胖！！！"
 				}
+				if strings.Contains(inText, "圓")  {
+					out = "小宇宙才不圓！！！"
+				}
+				if strings.Contains(inText, "神") && strings.Contains(inText, "買嗎"){
+					buy := []string{
+					"考慮一下","買！！！","等等","不要",
+					}
+					out = buy[rand.Intn(len(buy))]
+				}
+				
+				if strings.Contains(inText, "神") && strings.Contains(inText, "吃什麼"){
+					eat := []string{
+					"飯飯","麵麵","打邊爐","炸豬排","燒烤",
+					}
+					out = eat[rand.Intn(len(eat))]
+				}
+				if strings.Contains(inText, "小宇宙")  {
+					out = "小宇宙萌萌達~~"
+				}
+				if strings.Contains(inText, "燒")  {
+					out = "燒～～～"
+				}
 				
 				log.Println(message.Text)
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
