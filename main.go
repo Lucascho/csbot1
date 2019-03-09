@@ -18,7 +18,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
-
+        "math/rand"
 	"github.com/line/line-bot-sdk-go/linebot"
 )
 
@@ -58,6 +58,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				inText := strings.ToLower(message.Text)
 				if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					out = "汪"
+				}
+				if strings.Contains(inText, "今天運勢")  {
+					lucky := []string{
+					"大吉","吉","小吉","兇"
+						
+					}
+					out = lucky[rand.Intn(len(lucky))]
 				}
 				
 				log.Println(message.Text)
