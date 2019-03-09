@@ -61,9 +61,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}
 				if strings.Contains(inText, "今天運勢")  {
 					lucky := []string{
-					"大吉","吉","小吉","兇",
+					"大吉","吉","小吉","凶",
 					}
 					out = lucky[rand.Intn(len(lucky))]
+				}
+				if strings.Contains(inText, "胖") || strings.Contains(inText, "月半") {
+					out = "小宇宙才不胖！！！"
 				}
 				
 				log.Println(message.Text)
