@@ -119,7 +119,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 {
     "type": "image",
     "originalContentUrl": "https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
-    "previewImageUrl": "https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+    "previewImageUrl": "https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
 }
 				}
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "肚子痛")  {
