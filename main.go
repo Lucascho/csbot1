@@ -115,7 +115,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					out = "黛玉 小宇宙是小黛玉！！"
 				}
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "聰明")  {
-					out = "聰明 小宇宙超聰明！"
+					out = 
+{
+    "type": "image",
+    "originalContentUrl": "https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+    "previewImageUrl": "https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+}
 				}
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "肚子痛")  {
 					lines := []string {	
