@@ -134,7 +134,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					out = strings.Join(lines, "\r\n")
 				}
 				///
-				sat :={"type": "image","originalContentUrl": "https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","previewImageUrl": "https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"}
+				var sat = map[string]Vertex{"type": "image","originalContentUrl": "https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","previewImageUrl": "https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"}
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage(set)).Do(); err != nil {
 					log.Print(err)
 				}
