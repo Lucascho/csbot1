@@ -73,7 +73,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "買嗎"){
 					buy := []string{
-					"考慮一下","買！！！","等等","不要",
+					"考慮一下","買！！！","買~~~","買買買~",
 					}
 					out = buy[rand.Intn(len(buy))]
 				}
@@ -106,6 +106,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						out = strings.Trim(out, "/cs")
 					}
 					out += weather[rand.Intn(len(weather))]
+				}
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "抽")  {
+					out = "抽抽~"
 				}
 				//小宇宙的自白部分///
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "天才")  {
