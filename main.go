@@ -96,8 +96,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if strings.Contains(inText, "/cs") && (strings.Contains(inText, "颱風") || strings.Contains(inText, "地震"))   {
 					out = "小宇宙才沒有那種能力"
 				}
-				//
-				if strings.Contains(inText, "/cs") && strings.Contains(inText, "天氣")  {
+
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "天氣") || (strings.Contains(inText, "會下雨嗎") {
 					weather := []string{
 					"下大雨唷","招喚颱風唷","長香菇唷","飄雨","打雷你唷",
 					}
@@ -108,7 +108,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					out += weather[rand.Intn(len(weather))]
 				}
 				//小宇宙的自白部分///
-				//天才 小宇宙超天才！
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "天才")  {
 					out = "小宇宙超天才！"
 				}
