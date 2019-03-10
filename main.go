@@ -97,7 +97,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					weather := []string{
 					"下大雨唷","招喚颱風唷","長香菇唷","飄雨","打雷你唷",
 					}
-					out =message.Text+"會"+weather[rand.Intn(len(weather))]
+					if strings.Contains(inText, "今天") || strings.Contains(inText, "明天") || strings.Contains(inText, "後天"){
+						out += message.Text+"會"+weather[rand.Intn(len(weather))]		
+					}
+					out += weather[rand.Intn(len(weather))]
 				}
 				//小宇宙的自白部分///
 				//天才 小宇宙超天才！
