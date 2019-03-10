@@ -98,7 +98,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					"下大雨唷","招喚颱風唷","長香菇唷","飄雨","打雷你唷",
 					}
 					if strings.Contains(inText, "今天") || strings.Contains(inText, "明天") || strings.Contains(inText, "後天"){
-						out = out - "/cs"
+						out = strings.Trim(out, "/cs")) 
 						out += message.Text+"會"		
 					}
 					out += weather[rand.Intn(len(weather))]
