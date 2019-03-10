@@ -93,6 +93,24 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "天然")  {
 					out = "你才天然，你全家都天然"
 				}
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "天氣")  {
+					weather := []string{
+					"下大雨唷","招喚颱風唷","長香菇唷","飄雨","打雷你唷"
+					}
+					out =message.Text+"會"+weather[rand.Intn(len(weather))]
+				}
+				//小宇宙的自白部分///
+				//天才 小宇宙超天才！
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "天才")  {
+					out = "小宇宙超天才！"
+				}
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "黛玉")  {
+					out = "黛玉 小宇宙是小黛玉！！"
+				}
+				//聰明 小宇宙超聰明！
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "聰明")  {
+					out = "聰明 小宇宙超聰明！"
+				}
 				
 				log.Println(message.Text)
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
