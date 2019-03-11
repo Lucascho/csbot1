@@ -123,6 +123,19 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "聰明")  {
 					out = "小宇宙是超聰明！！"
 				}
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "曬衣服)  {
+					lines := []string {	
+						"認真的說 好不容易終於等到今天送來了家具 包括晾衣竿晾衣架衣櫥桌子 ",
+						"我終於可以在陽台曬衣服了！！！ ",
+						"雖然時間晚了但是還是開心的走出陽台準備把晾衣竿綁好的時候..... ",
+						"一推開門就是大雨是怎樣！！！（摔",
+						"我真的很認真的！！！",
+						"(●ﾟ一 ﾟ●)",
+					}
+					out = strings.Join(lines, "\r\n")
+				}
+				
+				
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "肚子痛")  {
 					lines := []string {	
 						"向外頭拉一拉 拉出一杯拉茶 拉走肚子的寂寞",
@@ -137,9 +150,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					out = strings.Join(lines, "\r\n")
 				}
 				
-				//linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "燒")  {
 					out = "燒毀 通通燒"
+				}
+				
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "奈良的鹿")  {
+					out = "我發現 我把奈良的鹿都背起來了!"
 				}
 				
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "霸") {
