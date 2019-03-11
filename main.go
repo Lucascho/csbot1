@@ -143,12 +143,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					var magicN = rand.Intn(10)
 					if(magicN == 1){
 					 out = ""
-					 img = "https://i.imgur.com/ozCoxCe.png"
+					 img = "https://i.imgur.com/DPTVdxb.png"
 					}
 				}
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "霸") {
 					 out = ""
-					 img = "https://i.imgur.com/DPTVdxb.png"
+					 
+					img = "https://i.imgur.com/ozCoxCe.png"
 				}
 
 				
