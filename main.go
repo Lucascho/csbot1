@@ -140,11 +140,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					
 					//https://i.imgur.com/l8l5zyj.png
 				}
-				
-				var magicN = rand.Intn(10)
-				if(magicN == 0){
-				 out = ""
+				if strings.Contains(inText, "/cs") {
+					var magicN = rand.Intn(10)
+					if(magicN == 0){
+					 out = ""
+					}
 				}
+				
 				
 				//if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")).Do(); err != nil {
 				//	log.Print(err)
