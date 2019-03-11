@@ -141,7 +141,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "霸") {
 					 out = ""
 					 img = "https://i.imgur.com/DPTVdxb.png"
-					}
+					
 				}
 				
 				if strings.Contains(inText, "/cs") {
