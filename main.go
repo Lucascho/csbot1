@@ -55,7 +55,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//}
 				log.Println(message.Text)
 				var out = ""
-				var img = "https://i.imgur.com/l8l5zyj.png"
+				var img = ""
 				inText := strings.ToLower(message.Text)
 				if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					out = "汪"
@@ -140,10 +140,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					
 					//https://i.imgur.com/l8l5zyj.png
 				}
+				
 				if strings.Contains(inText, "/cs") {
 					var magicN = rand.Intn(10)
-					if(magicN == 0){
+					if(magicN == 1){
 					 out = ""
+					 img = "https://i.imgur.com/l8l5zyj.png"
 					}
 				}
 				
