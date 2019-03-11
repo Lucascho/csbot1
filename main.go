@@ -138,6 +138,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					out = "燒毀 通通燒"
 				}
 				
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "霸") {
+					out = "" 
+					img = "https://i.imgur.com/ozCoxCe.png"
+				}
+				
 				
 				if strings.Contains(inText, "/cs") {
 					var magicN = rand.Intn(10)
@@ -146,11 +151,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					 img = "https://i.imgur.com/DPTVdxb.png"
 					}
 				}
-				if strings.Contains(inText, "/cs") && strings.Contains(inText, "霸") {
-					 out = ""
-					 
-					img = "https://i.imgur.com/ozCoxCe.png"
-				}
+
 
 				
 				if strings.Contains(inText, "/help") {
