@@ -55,7 +55,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//}
 				log.Println(message.Text)
 				var out = ""
-				var img = ""
+				var img = "https://i.imgur.com/l8l5zyj.png"
 				inText := strings.ToLower(message.Text)
 				if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					out = "汪"
@@ -135,11 +135,16 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				
 				//linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "燒")  {
-					out = ""
-					img = "https://i.imgur.com/l8l5zyj.png"
+					out = "燒毀 通通燒"
+					
 					
 					//https://i.imgur.com/l8l5zyj.png
-				}	
+				}
+				
+				var magicN = rand.Intn(10)
+				if(magicN == 0){
+				 out = ""
+				}
 				
 				//if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")).Do(); err != nil {
 				//	log.Print(err)
