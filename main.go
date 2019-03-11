@@ -89,7 +89,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					out = "小宇宙萌萌達~~"
 				}
 
-				if strings.Contains(inText, "/cs") && strings.Contains(inText, "天然")  {
+				if strings.Contains(inText, "/cs") && (strings.Contains(inText, "天然")||strings.Contains(inText, "天燃")) {
 					out = "你才天然，你全家都天然"
 				}
 				if strings.Contains(inText, "/cs") && (strings.Contains(inText, "颱風") || strings.Contains(inText, "地震"))   {
@@ -105,6 +105,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						out = strings.Trim(out, "/cs")
 					}
 					out += weather[rand.Intn(len(weather))]
+				}
+				///cs 
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "蒸蛋")  {
+					out = "小宇宙是小廚神~"
 				}
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "抽")  {
 					out = "抽抽~"
