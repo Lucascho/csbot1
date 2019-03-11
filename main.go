@@ -133,17 +133,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					}
 					out = strings.Join(lines, "\r\n")
 				}
-				///
-				//var sat = map[string]Vertex{"type": "image","originalContentUrl": "https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","previewImageUrl": "https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"}
-				//if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage(set)).Do(); err != nil {
-				//	log.Print(err)
-				//}
 				
 				//linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")
 								
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")).Do(); err != nil {
-					log.Print(err)
-				}
+				//if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")).Do(); err != nil {
+				//	log.Print(err)
+				//}
 				log.Println(message.Text)
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
