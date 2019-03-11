@@ -57,9 +57,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				var out = ""
 				var img = ""
 				inText := strings.ToLower(message.Text)
-				if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
-					out = "汪"
-				}
+				//if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
+				//	out = "汪"
+				//}
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "今天運勢") || strings.Contains(inText, "今日運勢") {
 					lucky := []string{
 					"大吉","中吉","小吉","吉","末吉","凶","大凶",
@@ -136,19 +136,38 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "燒")  {
 					out = "燒毀 通通燒"
-					
-					
-					//https://i.imgur.com/l8l5zyj.png
+				}
+				
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "霸") {
+					 out = ""
+					 img = "https://i.imgur.com/DPTVdxb.png"
+					}
 				}
 				
 				if strings.Contains(inText, "/cs") {
 					var magicN = rand.Intn(10)
 					if(magicN == 1){
 					 out = ""
-					 img = "https://i.imgur.com/l8l5zyj.png"
+					 img = "https://i.imgur.com/ozCoxCe.png"
 					}
 				}
-				
+
+				if strings.Contains(inText, "/help") {
+					lines := []string {	
+						"此為小宇宙機器人 beta 實驗機",
+						"輸入關鍵字可以得到答覆，可以詢問運勢天氣等各種物天",
+						"請輸入 '/cs + 關鍵字' 現在關鍵字如下",
+						"今天運勢",
+						"胖",
+						"吃什麼",
+						"天然",
+						"小宇宙",
+						"颱風",
+						"買",
+						"肚子痛",
+					}
+					out = strings.Join(lines, "\r\n")
+				}
 				
 				//if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")).Do(); err != nil {
 				//	log.Print(err)
