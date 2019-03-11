@@ -139,7 +139,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//	log.Print(err)
 				//}
 				
-				//
+				//linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")
+								
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")).Do(); err != nil {
+					log.Print(err)
+				}
 				log.Println(message.Text)
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
