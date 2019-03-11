@@ -55,6 +55,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//}
 				log.Println(message.Text)
 				var out = ""
+				var img = ""
 				inText := strings.ToLower(message.Text)
 				if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					out = "汪"
@@ -87,9 +88,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "小宇宙")  {
 					out = "小宇宙萌萌達~~"
 				}
-				if strings.Contains(inText, "/cs") && strings.Contains(inText, "燒")  {
-					out = "燒～～～"
-				}
+
 				if strings.Contains(inText, "/cs") && strings.Contains(inText, "天然")  {
 					out = "你才天然，你全家都天然"
 				}
@@ -135,14 +134,28 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}
 				
 				//linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")
-								
+				if strings.Contains(inText, "/cs") && strings.Contains(inText, "燒")  {
+					out = ""
+					img = "https://i.imgur.com/l8l5zyj.png"
+					
+					//https://i.imgur.com/l8l5zyj.png
+				}	
+				
 				//if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","https://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")).Do(); err != nil {
 				//	log.Print(err)
 				//}
+				if out != nil {
 				log.Println(message.Text)
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+						log.Print(err)
+					}
+				} else {
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage(img,img)).Do(); err != nil {
 					log.Print(err)
+					}
+				
 				}
+
 
 
 			}
