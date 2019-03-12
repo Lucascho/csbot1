@@ -73,12 +73,26 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if strings.Contains(inText, "天然")||strings.Contains(inText, "天燃"){
 						out = "你才天然，你全家都天然"
 					}
-					
+					if strings.Contains(inText, "美"){
+						out = "氣質 品味 知性。小宇宙！"
+					}
+					if strings.Contains(inText, "跌倒"){
+						out = "如果現實有輕功可以學就好了 那就不會跌倒了（哭暈"
+					}
+					if strings.Contains(inText, "香港"){
+						out = "深圳灣滿出來了"
+					}					
 					if strings.Contains(inText, "颱風") || strings.Contains(inText, "地震")  || strings.Contains(inText, "水災")   {
 						out = "小宇宙才沒有那種能力"
 					}
 					if strings.Contains(inText, "蒸蛋")  {
 						out = "小宇宙是小廚神~"
+					}
+					if strings.Contains(inText, "香菇")  {
+						out = "小宇宙喜歡吃香菇~"
+					}
+					if strings.Contains(inText, "豆芽菜)  {
+						out = "//｀ﾟдﾟ)!!!!!! 剛剛去浴室洗個腳 發現浴室排水孔..... 竟然長出一根豆芽.............. (●ﾟ灬 ﾟ●)"
 					}
 					if strings.Contains(inText, "/cs") && strings.Contains(inText, "抽")  {
 						out = "抽抽~"
@@ -98,7 +112,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					}
 					if strings.Contains(inText, "吃什麼")||strings.Contains(inText, "吃") {
 						eat := []string{
-							"飯飯","麵麵","打邊爐","炸豬排","燒烤","烤雞翅","蒸蛋",
+							"飯飯","麵麵","打邊爐","炸豬排","燒烤","烤雞翅","蒸蛋","歐姆蛋",
+							"炒米粉","蘿蔔糕",
 						}
 						out = eat[rand.Intn(len(eat))]
 					}
