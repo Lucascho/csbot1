@@ -213,7 +213,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						out = eat[rand.Intn(len(eat))]
 					}
 					if strings.Contains(inText, "漢納") || strings.Contains(inText, "憨那")   {
-						out = "我是天才小仙女！！🧚🏻‍♀"
+						out = "你是天才小仙女！！🧚🏻‍♀"
 					}
 					
 					log.Println(message.Text)
