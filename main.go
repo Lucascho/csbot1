@@ -20,7 +20,6 @@ import (
 	"strings"
         "math/rand"
 	"github.com/line/line-bot-sdk-go/linebot"
-	"github.com/minchao/go-cwb/cwb"
 )
 
 var bot *linebot.Client
