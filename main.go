@@ -112,7 +112,14 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							out = strings.Trim(out, "/cs")
 						}
 						out += weather[rand.Intn(len(weather))]
-					}					
+					}	
+					if strings.Contains(inText, "燒")  {
+						out = "燒毀 通通燒"
+					}
+
+					if strings.Contains(inText, "奈良的鹿")  {
+						out = "我發現 我把奈良的鹿都背起來了!"
+					}
 					//小宇宙的自白部分///
 					if strings.Contains(inText, "天才")  {
 						out = "小宇宙超天才！"
@@ -149,29 +156,16 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						}
 						out = strings.Join(lines, "\r\n")
 					}
-
-					if strings.Contains(inText, "燒")  {
-						out = "燒毀 通通燒"
-					}
-
-					if strings.Contains(inText, "/cs") && strings.Contains(inText, "奈良的鹿")  {
-						out = "我發現 我把奈良的鹿都背起來了!"
-					}
-
 					if strings.Contains(inText, "霸") {
 						out = "" 
 						img = "https://i.imgur.com/ozCoxCe.png"
 					}
-
-
-					if strings.Contains(inText, "/cs") {
-						var magicN = rand.Intn(10)
-						if(magicN == 1){
+					// magic Number
+					var magicN = rand.Intn(10)
+					if (magicN == 1) {
 						 out = ""
 						 img = "https://i.imgur.com/DPTVdxb.png"
-						}
 					}
-
 					if strings.Contains(inText, "help") {
 						lines := []string {	
 							"此為小宇宙機器人 beta 實驗機",
@@ -201,6 +195,25 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					}
 					
 				}
+				
+				// cs end
+				// 占卜機器人
+				if strings.Contains(inText, "/ld"){
+					// for lucky
+					if strings.Contains(inText, "運勢") {
+						lucky := []string{
+						"大吉","中吉","小吉","吉","末吉","凶","大凶",
+						}
+						out = lucky[rand.Intn(len(lucky))]
+					}
+					
+					log.Println(message.Text)
+						if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+							log.Print(err)
+					}
+				
+				}
+				
 				
 				
 				
