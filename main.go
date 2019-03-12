@@ -20,6 +20,7 @@ import (
 	"strings"
         "math/rand"
 	"github.com/line/line-bot-sdk-go/linebot"
+	"github.com/minchao/go-cwb/cwb"
 )
 
 var bot *linebot.Client
@@ -205,6 +206,20 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						"大吉","中吉","小吉","吉","末吉","凶","大凶",
 						}
 						out = lucky[rand.Intn(len(lucky))]
+					}
+					
+					if strings.Contains(inText, "test") {
+					
+
+						client := cwb.NewClient("CWB-E39E89F8-780D-4616-96FF-22D16C79D45B", nil)
+
+						forecast, _, err := client.Forecasts.Get36HourWeather(context.Background(), nil, nil)
+						if err != nil {
+						    fmt.Println(err)
+							out = err
+						}
+
+
 					}
 					
 					log.Println(message.Text)
