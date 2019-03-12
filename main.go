@@ -206,6 +206,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						}
 						out = lucky[rand.Intn(len(lucky))]
 					}
+					if strings.Contains(inText, "吃什麼")||strings.Contains(inText, "吃") {
+						eat := []string{
+							"飯飯","麵麵","打邊爐","炸豬排","燒烤","烤雞翅","蒸蛋",
+						}
+						out = eat[rand.Intn(len(eat))]
+					}
+					if strings.Contains(inText, "漢納") || strings.Contains(inText, "憨那")   {
+						out = "我是天才小仙女！！🧚🏻‍♀"
+					}
 					
 					log.Println(message.Text)
 						if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
