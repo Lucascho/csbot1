@@ -103,7 +103,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						out = eat[rand.Intn(len(eat))]
 					}
 					
-					if strings.Contains(inText, "天氣") || strings.Contains(inText, "下雨嗎") {
+					if strings.Contains(inText, "天氣") || strings.Contains(inText, "下雨") {
 						weather := []string{
 						"下大雨唷","招喚颱風唷","長香菇唷","飄雨","打雷你唷",
 						}
