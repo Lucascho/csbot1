@@ -198,7 +198,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				
 				// cs end
 				// 占卜機器人
-				if strings.Contains(inText, "/ld"){
+				if strings.Contains(inText, "/123"){
 					// for lucky
 					if strings.Contains(inText, "運勢") {
 						lucky := []string{
