@@ -208,20 +208,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						out = lucky[rand.Intn(len(lucky))]
 					}
 					
-					if strings.Contains(inText, "test") {
-					
-
-						client := cwb.NewClient("CWB-E39E89F8-780D-4616-96FF-22D16C79D45B", nil)
-
-						forecast, _, err := client.Forecasts.Get36HourWeather(context.Background(), nil, nil)
-						if err != nil {
-						    fmt.Println(err)
-							out = err
-						}
-
-
-					}
-					
 					log.Println(message.Text)
 						if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 							log.Print(err)
