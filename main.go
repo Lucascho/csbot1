@@ -92,9 +92,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						out = "小宇宙喜歡吃香菇~"
 					}
 					if strings.Contains(inText, "豆芽菜)  {
-						out = "//｀ﾟдﾟ)!!!!!! 剛剛去浴室洗個腳 發現浴室排水孔..... 竟然長出一根豆芽.............. (●ﾟ灬 ﾟ●)"
+						out = " ｀ﾟдﾟ)!!!!!! 剛剛去浴室洗個腳 發現浴室排水孔..... 竟然長出一根豆芽.............. (●ﾟ灬 ﾟ●)"
 					}
-					if strings.Contains(inText, "/cs") && strings.Contains(inText, "抽")  {
+					if strings.Contains(inText, "抽")  {
 						out = "抽抽~"
 					}
 					// for lucky
