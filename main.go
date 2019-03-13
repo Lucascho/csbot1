@@ -150,10 +150,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					}
 					if strings.Contains(inText, "聰明")  {
 						out = "小宇宙是超聰明！！"
-					}//哈比人能夠一天吃七餐
+					}//（zzzzz)
+					if strings.Contains(inText, "起床")  {
+						out = "（zzzzz)"
+					}
 					if strings.Contains(inText, "哈比人")  {
 						out = "哈比人能一天吃七餐 但是小宇宙能一天吃九餐唷～"
-					}//哈比人能夠一天吃七餐
+					}
 					if strings.Contains(inText, "曬衣服")  {
 						lines := []string {	
 							"認真的說 好不容易終於等到今天送來了家具 包括晾衣竿晾衣架衣櫥桌子 ",
