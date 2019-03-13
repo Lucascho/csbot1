@@ -91,6 +91,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if strings.Contains(inText, "香菇")  {
 						out = "小宇宙喜歡吃香菇~"
 					}
+					if strings.Contains(inText, "昭和")  {
+						old := []string{
+							"你才昭和你全家才昭和"," 我以為這很常見？","小宇宙是聽說的!",
+						}
+						out = old[rand.Intn(len(old))]
+					}
 					if strings.Contains(inText, "豆芽菜")  {
 						out = " ｀ﾟдﾟ)!!!!!! 剛剛去浴室洗個腳 發現浴室排水孔..... 竟然長出一根豆芽.............. (●ﾟ灬 ﾟ●)"
 					}
@@ -156,8 +162,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						}
 						out = strings.Join(lines, "\r\n")
 					}
-
-
 					if strings.Contains(inText, "肚子痛")  {
 						lines := []string {	
 							"向外頭拉一拉 拉出一杯拉茶 拉走肚子的寂寞",
@@ -172,13 +176,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						out = strings.Join(lines, "\r\n")
 					}
 					if strings.Contains(inText, "霸") {
-						out = "" 
+						out = "1" 
 						img = "https://i.imgur.com/ozCoxCe.png"
 					}
 					// magic Number
 					var magicN = rand.Intn(10)
 					if (magicN == 1) {
-						 out = ""
+						 out = "1"
 						 img = "https://i.imgur.com/DPTVdxb.png"
 					}
 					if strings.Contains(inText, "help") {
@@ -197,8 +201,14 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						}
 						out = strings.Join(lines, "\r\n")
 					}
+					if out == "" {
+						noWay := []string {
+							"小宇宙的話，比這個更厲害哦～","臣妾作不到啊啊啊啊啊啊啊啊啊啊啊",
+						}
+						out = noWay[rand.Intn(len(noWay))]
+					}
 				
-					if out != "" {
+					if out != "1" {
 						log.Println(message.Text)
 						if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 							log.Print(err)
