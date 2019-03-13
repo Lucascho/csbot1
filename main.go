@@ -186,7 +186,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					var magicN = rand.Intn(10)
 					if (magicN == 1) {
 						 out = "1"
-						 img = "https://i.imgur.com/DPTVdxb.png"
+						 img = "https://i.imgur.com/k271IEO.png"
 					}
 					if strings.Contains(inText, "help") {
 						lines := []string {	
