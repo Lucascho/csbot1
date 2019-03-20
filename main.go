@@ -185,6 +185,14 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						out = "1" 
 						img = "https://i.imgur.com/ozCoxCe.png"
 					}
+					if strings.Contains(inText, "噴水") {
+						out = "1" 
+						img = "https://i.imgur.com/fKggfcl.jpg"
+					}//
+					if strings.Contains(inText, "香菇") || strings.Contains(inText, "吃菇"){
+						out = "1" 
+						img = "https://i.imgur.com/7Vd5IEf.jpg"
+					}
 					// magic Number
 					var magicN = rand.Intn(10)
 					if (magicN == 1) {
