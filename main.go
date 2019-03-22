@@ -91,7 +91,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if strings.Contains(inText, "香菇")  {
 						out = "小宇宙喜歡吃香菇~"
 					}
-					if strings.Contains(inText, "請假")  {
+					if strings.Contains(inText, "請假") ||strings.Contains(inText, "休假")   {
 						out = "小宇宙都不用請假啊~ 自主放假(艸  )~"
 					}
 					if strings.Contains(inText, "昭和")  {
