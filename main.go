@@ -91,6 +91,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if strings.Contains(inText, "香菇")  {
 						out = "小宇宙喜歡吃香菇~"
 					}
+					if strings.Contains(inText, "請假")  {
+						out = "小宇宙都不用請假啊~ 自主放假(艸  )~"
+					}
 					if strings.Contains(inText, "昭和")  {
 						old := []string{
 							"你才昭和你全家才昭和"," 我以為這很常見？","小宇宙是聽說的!",
@@ -217,7 +220,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					}
 					if out == "" {
 						noWay := []string {
-							"小宇宙的話，比這個更厲害哦～","臣妾作不到啊啊啊啊啊啊啊啊啊啊啊",
+							"小宇宙的話，比這個更厲害哦～","臣妾作不到啊啊啊啊啊啊啊啊啊啊啊","小宇宙是萬能的小宇宙~",
 						}
 						out = noWay[rand.Intn(len(noWay))]
 					}
