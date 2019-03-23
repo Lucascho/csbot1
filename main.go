@@ -88,8 +88,41 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if strings.Contains(inText, "蒸蛋")  {
 						out = "小宇宙是小廚神~"
 					}
-					if strings.Contains(inText, "香菇")  {
+					if strings.Contains(inText, "飛機")  {
 						out = "小宇宙喜歡吃香菇~"
+					}
+					if strings.Contains(inText, "香菇")  {
+						out = "說好不提飛機的！(淚奔"
+					}
+					if strings.Contains(inText, "角落生物")  {
+						out = "角落生物超可愛的！！！"
+					}
+					if strings.Contains(inText, "神樂")  {
+						out = "你找小宇宙的神樂樂嗎(撒小花"
+					}
+					if strings.Contains(inText, "118")  {
+						out = "你找小宇宙的左...不對右丞相嗎(掩面"
+					}
+					if strings.Contains(inText, "琥珀")  {
+						out = "你說大都督嗎 是小宇宙的得力幹將喔！！！"
+					}
+					if strings.Contains(inText, "日隱")  {
+						out = "詛咒你喔！！！！！"
+					}
+					if strings.Contains(inText, "樓座")  {
+						out = "小宇宙的頭號經紀人兼金庫！！！,咦,小宇宙的錢包呢（找"
+					}
+					if strings.Contains(inText, "電鍋")  {
+						out = "不是小宇宙沒煮飯，是米飯它自己不想..."
+					}
+					if strings.Contains(inText, "人工祈禱")  {
+						out = "只有M夢會做這種事吧(看(￣ー￣)..."
+					}
+					if strings.Contains(inText, "學徒")  {
+						out = "需要免費諮商嗎？請洽1234567890"
+					}
+					if strings.Contains(inText, "昭和")  {
+						out = "昭和是什麼，可以吃嗎ヾ(●ﾟ∀ﾟ●)ﾉ"
 					}
 					if strings.Contains(inText, "請假") ||strings.Contains(inText, "休假")   {
 						out = "小宇宙都不用請假啊~ 自主放假(艸  )~"
