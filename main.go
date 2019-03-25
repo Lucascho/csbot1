@@ -121,8 +121,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if strings.Contains(inText, "學徒")  {
 						out = "需要免費諮商嗎？請洽1234567890"
 					}
-					if strings.Contains(inText, "昭和")  {
-						out = "昭和是什麼，可以吃嗎ヾ(●ﾟ∀ﾟ●)ﾉ"
+					if strings.Contains(inText, "捏蛋")  {
+						out = "捏爆你的蛋喔！！"
 					}
 					if strings.Contains(inText, "請假") ||strings.Contains(inText, "休假")   {
 						out = "小宇宙都不用請假啊~ 自主放假(艸  )~"
