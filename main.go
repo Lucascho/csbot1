@@ -155,9 +155,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if strings.Contains(inText, "吃什麼")||strings.Contains(inText, "吃") {
 						eat := []string{
 							"飯飯","麵麵","打邊爐","炸豬排","燒烤","烤雞翅","蒸蛋","歐姆蛋",
-							"炒米粉","蘿蔔糕",
+							"炒米粉","蘿蔔糕","大腸薑絲通心麵","糯米腸",
 						}
 						out = eat[rand.Intn(len(eat))]
+						if strings.Contains(out, "大腸薑絲通心麵") {
+							out = "1" 
+							img = "https://i.imgur.com/7X7Qm1w.jpg"
+						}
 					}
 					
 					if strings.Contains(inText, "天氣") || strings.Contains(inText, "下雨") {
@@ -283,9 +287,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					}
 					if strings.Contains(inText, "吃什麼")||strings.Contains(inText, "吃") {
 						eat := []string{
-							"飯飯","麵麵","打邊爐","炸豬排","燒烤","烤雞翅","蒸蛋",
+							"飯飯","麵麵","打邊爐","炸豬排","燒烤","烤雞翅","蒸蛋","大腸薑絲通心麵","糯米雞",
 						}
 						out = eat[rand.Intn(len(eat))]
+						
 					}
 					if strings.Contains(inText, "漢納") || strings.Contains(inText, "憨那")   {
 						out = "你是天才小仙女！！🧚🏻‍♀"
