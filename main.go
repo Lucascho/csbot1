@@ -155,7 +155,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if strings.Contains(inText, "吃什麼")||strings.Contains(inText, "吃") {
 						eat := []string{
 							"飯飯","麵麵","打邊爐","炸豬排","燒烤","烤雞翅","蒸蛋","歐姆蛋",
-							"炒米粉","蘿蔔糕","大腸薑絲通心麵","糯米腸",
+							"炒米粉","蘿蔔糕","大腸薑絲通心麵","糯米腸","炸雞腿","生蠔","吐司",
 						}
 						out = eat[rand.Intn(len(eat))]
 						if strings.Contains(out, "大腸薑絲通心麵") {
@@ -236,8 +236,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					// magic Number
 					var magicN = rand.Intn(10)
 					if (magicN == 1) {
+						mag := []string {
+							"https://i.imgur.com/k271IEO.png",
+							"https://i.imgur.com/ozCoxCe.png",
+							"https://i.imgur.com/3fhMiW0.gif",
+							"https://i.imgur.com/9IcxSdS.gif",
+							"https://i.imgur.com/3LYn7bz.png",
+						}
 						 out = "1"
-						 img = "https://i.imgur.com/k271IEO.png"
+						 img = mag[rand.Intn(len(mag))]
 					}
 					if strings.Contains(inText, "help") {
 						lines := []string {	
