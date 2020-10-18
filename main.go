@@ -155,7 +155,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if strings.Contains(inText, "吃什麼")||strings.Contains(inText, "吃") {
 						eat := []string{
 							"飯飯","麵麵","打邊爐","炸豬排","燒烤","烤雞翅","蒸蛋","歐姆蛋",
-							"炒米粉","蘿蔔糕","大腸薑絲通心麵","糯米腸","炸雞腿","生蠔","吐司",
+							"炒米粉","蘿蔔糕","大腸薑絲通心麵","糯米腸","炸雞腿","生蠔","吐司","黎麥","燙青菜","丹丹",
+							"關東煮","珍奶","雞排",
 						}
 						out = eat[rand.Intn(len(eat))]
 						if strings.Contains(out, "大腸薑絲通心麵") {
